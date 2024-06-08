@@ -12,6 +12,17 @@ const SearchBox = ({ updateInfo }) => {
       );
       let json = await data.json();
       console.log(json);
+
+      let result = {
+        city: city,
+        temp: json.main.temp,
+        humidity: json.main.humidity,
+        feelslike: json.main.feels_like,
+        weather: json.weather[0].description,
+        wind: json.wind.speed,
+        gust: json.wind.gust,
+      };
+      return result;
     } catch (err) {
       throw err;
     }
@@ -47,7 +58,9 @@ const SearchBox = ({ updateInfo }) => {
         <button className="relative top-40 left-4 p-3 rounded-lg bg-blue-500 hover:opacity-90 text-white">
           SEARCH
         </button>
-        {error && <p className="text-red-600">No such place exists</p>}
+        {error && (
+          <p className="text-red-600 mx-5 mt-44">No such place exists</p>
+        )}
       </form>
     </div>
   );
