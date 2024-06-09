@@ -7,6 +7,7 @@ const SearchBox = ({ updateInfo }) => {
 
   let getWeatherInfo = async () => {
     try {
+      //fetching the openweatherAPI
       let data = await fetch(
         `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`
       );
@@ -17,10 +18,13 @@ const SearchBox = ({ updateInfo }) => {
         city: city,
         temp: json.main.temp,
         humidity: json.main.humidity,
-        feelslike: json.main.feels_like,
+        feelsLike: json.main.feels_like,
         weather: json.weather[0].description,
         wind: json.wind.speed,
         gust: json.wind.gust,
+        visibility: json.visibility,
+        pressure: json.main.pressure,
+        grndlvl: json.main.grnd_level,
       };
       return result;
     } catch (err) {
@@ -39,27 +43,32 @@ const SearchBox = ({ updateInfo }) => {
       let newInfo = await getWeatherInfo();
       updateInfo(newInfo);
       console.log(city);
+      setError("");
     } catch {
       setError(true);
     }
   };
 
-  return (
+ 
+
+  return   (
     <div className="flex justify-center items-center">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          className="relative top-40 w-96 p-4 rounded-lg"
+          className="relative top-32 w-96 p-4 rounded-lg dark:text-gray-50 dark:bg-gray-900"
           placeholder="Enter your City"
           value={city}
           onChange={handleChange}
           required
         />
-        <button className="relative top-40 left-4 p-3 rounded-lg bg-blue-500 hover:opacity-90 text-white">
+        <button className="relative top-32 left-4 p-3 rounded-lg bg-blue-500 hover:opacity-90 text-white dark:bg-gray-900">
           SEARCH
         </button>
         {error && (
-          <p className="text-red-600 mx-5 mt-44">No such place exists</p>
+          <p className="text-red-600 font-semibold absolute mx-5 mt-36 dark:bg-gray-900">
+            No such place exists
+          </p>
         )}
       </form>
     </div>
