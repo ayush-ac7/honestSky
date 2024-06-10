@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { API_URL, API_KEY } from "../utils/constants";
+import { ErrorContext } from "../contexts/Error";
 
 const SearchBox = ({ updateInfo }) => {
   const [city, setCity] = useState("");
-  const [error, setError] = useState(false);
+  const { error, setError } = useContext(ErrorContext);
 
   let getWeatherInfo = async () => {
+    //handling errors
     try {
       //fetching the openweatherAPI
       let data = await fetch(
@@ -49,20 +51,18 @@ const SearchBox = ({ updateInfo }) => {
     }
   };
 
- 
-
-  return   (
-    <div className="flex justify-center items-center">
+  return (
+    <div className="">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          className="relative top-32 w-96 p-4 rounded-lg dark:text-gray-50 dark:bg-gray-900"
+          className="absolute top-40 left-80 w-96 ml-32 p-4 rounded-lg dark:text-gray-50 dark:bg-gray-900"
           placeholder="Enter your City"
           value={city}
           onChange={handleChange}
           required
         />
-        <button className="relative top-32 left-4 p-3 rounded-lg bg-blue-500 hover:opacity-90 text-white dark:bg-gray-900">
+        <button className="absolute top-40  left-0  ml-[840px] mt-[5px] p-3 rounded-lg bg-blue-500 hover:opacity-90 text-white dark:bg-gray-900">
           SEARCH
         </button>
         {error && (
