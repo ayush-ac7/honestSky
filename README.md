@@ -1,10 +1,13 @@
 # honestSky - Weather App
 
 A live weather web app with Open Weather API that displays the current forecast which dynamically changes according to the user input city.
-Can checkout different weather by searching :
-for example - Amsterdam (Rain)
-            - Greenland (Cold)
-            - Bhopal (Hot)
+Initially added 'Jhansi' as a default city. 
+
+- Can checkout different weather by searching :
+for example - Amsterdam (Rain weather)
+            - Greenland (Cold weather)
+            - Bhopal (Hot weather).
+
 
 
 
