@@ -24,14 +24,17 @@ const WeatherInfo = ({ info }) => {
   } = info;
 
   return error ? (
-    <p className="text-center p-6 tracking-widest dark:bg-gray-900 dark:text-white">TRY AGAIN WITH PROPER NAME</p>
+    //used ternary operator if encounter any error then show error message if not then show the weather info
+    <p className="text-center p-6 tracking-widest dark:bg-gray-900 dark:text-white">
+      TRY AGAIN WITH PROPER NAME
+    </p>
   ) : (
     <div className=" shadow-2xl p-6 flex items-center dark:bg-gray-900">
       <div className="left section shadow-2xl p-2">
         <div className="border-gray-200 dark:border-gray-50 dark:border-b-[1px] dark:text-white max-w-2xl pb-4 border-b-2 tracking-wider text-xl font-light">
           Current Weather
         </div>
-        <div className="info1 flex items-center gap-5 mt-4">
+        <div className="leftSide-weatherInfo flex items-center gap-5 mt-4">
           <div className="text-4xl dark:text-white font-semibold flex items-center py-2">
             {
               <img
@@ -55,7 +58,7 @@ const WeatherInfo = ({ info }) => {
             RealFeel® {Math.floor(feelsLike)}&deg;
           </span>
         </div>
-        <div className="info2 flex dark:text-white">
+        <div className="rightSide-weatherInfo flex dark:text-white">
           <div>
             <p className="border-gray-100  w-56 dark:border-b-[1px] border-b-2 my-4">
               Humidity <span className="ml-28">{humidity}%</span>
