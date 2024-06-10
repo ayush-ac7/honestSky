@@ -24,7 +24,7 @@ for example - Amsterdam (Rain weather)
 
 ## Tech Stack
 
-**Client:** React, TailwindCSS
+**Client:** React, JavaScript, TailwindCSS
 
 **Server:** Open Weather API
 
