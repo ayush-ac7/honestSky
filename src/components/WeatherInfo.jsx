@@ -4,13 +4,10 @@ import cold from "../assets/cold.png";
 import StraightIcon from "@mui/icons-material/Straight";
 import { COLD_URL, HOT_URL, RAIN_URL } from "../utils/constants";
 import { useContext, useState } from "react";
-import {ErrorContext} from "../contexts/Error";
+import { ErrorContext } from "../contexts/Error";
 
-
-
-const WeatherInfo = ({ info}) => {
-
-  const{error, setError} = useContext(ErrorContext);
+const WeatherInfo = ({ info }) => {
+  const { error, setError } = useContext(ErrorContext);
 
   //destructuring objects for better clarity
   const {
@@ -26,8 +23,9 @@ const WeatherInfo = ({ info}) => {
     grndlvl,
   } = info;
 
-  return (error) ? <p>please try again</p> : (
-    
+  return error ? (
+    <p className="text-center p-6 tracking-widest dark:bg-gray-900 dark:text-white">TRY AGAIN WITH PROPER NAME</p>
+  ) : (
     <div className=" shadow-2xl p-6 flex items-center dark:bg-gray-900">
       <div className="left section shadow-2xl p-2">
         <div className="border-gray-200 dark:border-gray-50 dark:border-b-[1px] dark:text-white max-w-2xl pb-4 border-b-2 tracking-wider text-xl font-light">
