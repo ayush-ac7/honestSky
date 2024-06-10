@@ -1,6 +1,10 @@
 # honestSky - Weather App
 
 A live weather web app with Open Weather API that displays the current forecast which dynamically changes according to the user input city.
+Can checkout different weather by searching :
+for example - Amsterdam (Rain)
+            - Greenland (Cold)
+            - Bhopal (Hot)
 
 
 
@@ -9,9 +13,10 @@ A live weather web app with Open Weather API that displays the current forecast 
 
 - Fetches the Live Open Weather API
 - Light/dark mode toggle
-- Shown the full weather information also changeS units for better clarity
+- Shown the full weather information also changes units for better clarity
 - Images and icon changes according to the weather condition for better UI.
 - Used Context API for better state management also made a custom hook for toggle theme.
+
 
 
 ## Tech Stack
