@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import Homepage from "./components/Homepage";
 import { ThemeProvider } from "./contexts/theme";
 
+
 function App() {
+  
+  //for state changing while toggling
   const [themeMode, setThemeMode] = useState("light");
 
   const lightTheme = () => {
@@ -16,6 +19,7 @@ function App() {
   //actual change in theme
 
   useEffect(() => {
+    //selecting html tree for updation
     document.querySelector("html").classList.remove("light", "dark");
     document.querySelector("html").classList.add(themeMode);
   }, [themeMode]);
