@@ -3,25 +3,21 @@ import ThemeBtn from "./ThemeBtn";
 
 const Header = () => {
   return (
-    <div>
-      <div>
-        <h1 className="absolute font-bold tracking-wider text-white z-10 m-2 p-2 text-4xl italic">
-          honest<span className="text-sky-500">Sky</span>
+    <header className="relative w-full h-56 flex flex-col">
+      <img
+        className="absolute inset-0 object-cover w-full h-full z-0" // Ensure image fills container
+        src={weatherImg}
+        alt="nightweather"
+      />
+      <div className="flex justify-between items-center w-full z-10 p-6">
+        <h1 className="font-bold tracking-wider text-white text-2xl md:text-4xl italic">
+          honest<span className="text-sky-400">Sky</span>
         </h1>
+        <ThemeBtn />
       </div>
-
-      <div>
-        <div className="absolute right-3 left- mt-2">
-          <ThemeBtn />
-        </div>
-        <img
-          className="w-full h-56 static"
-          src={weatherImg}
-          alt="nightweather"
-        />
-      </div>
-    </div>
+    </header>
   );
 };
+
 
 export default Header;
