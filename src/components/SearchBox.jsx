@@ -66,8 +66,8 @@ const SearchBox = ({ updateInfo }) => {
           SEARCH
         </button>
         {error && (
-          <p className="text-red-600 font-semibold font-serif text-3xl max-w-screen-2xl py-24 text-center dark:bg-gray-900">
-            Data Not Found!
+          <p className="text-red-600 font-semibold font-serif text-3xl max-w-screen-2xl py-28 text-center dark:bg-gray-900">
+            Data Not Found :(
           </p>
         )}
       </form>

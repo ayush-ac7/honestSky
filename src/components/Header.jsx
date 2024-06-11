@@ -9,7 +9,7 @@ const Header = () => {
         src={weatherImg}
         alt="nightweather"
       />
-      <div className="flex justify-between items-center w-full z-10 p-6">
+      <div className="flex justify-between items-center w-full z-10 p-4">
         <h1 className="font-bold tracking-wider text-white text-2xl md:text-4xl italic">
           honest<span className="text-sky-400">Sky</span>
         </h1>

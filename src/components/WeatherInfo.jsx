@@ -24,7 +24,7 @@ const WeatherInfo = ({ info }) => {
 
   return error ? (
     //used ternary operator if encounter any error then show error message if not then show the weather info
-    <h3 className="text-center p-6 tracking-widest dark:bg-gray-900 dark:text-white">
+    <h3 className="text-center pb-20 tracking-widest dark:bg-gray-900 dark:text-white">
       PLEASE TRY AGAIN WITH PROPER NAME
     </h3>
   ) : (
