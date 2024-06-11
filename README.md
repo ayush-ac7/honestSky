@@ -17,6 +17,7 @@ for example - Amsterdam (Rain weather)
 - Fetches the Live Open Weather API
 - Light/dark mode toggle
 - User can search for different cities
+- Shows the current date & time
 - Shown the full weather information also changes units for better clarity
 - Icon changes according to the weather condition for better UI.
 - Used Context API for better state management also made a custom hook for toggle theme.
